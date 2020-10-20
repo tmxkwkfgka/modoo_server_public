@@ -1,0 +1,12 @@
+type AddWhichiToUserResponse {
+    ok: Boolean!
+    error: String
+}
+
+type Mutation {
+    AddWhichiToUser(
+        id: Int!
+        imei: String!
+        
+    ): AddWhichiToUserResponse!
+}

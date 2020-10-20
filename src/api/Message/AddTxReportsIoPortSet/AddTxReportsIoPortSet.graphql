@@ -1,0 +1,36 @@
+type AddTxReportsIoPortSetResponse {
+    ok: Boolean!
+    error: String
+}
+
+
+type Mutation {
+    AddTxReportsIoPortSet(
+        
+        imei: String!
+        report_masking_bit_1: String!
+        period_time_1: String!
+        io_masking_bit_1: String!
+        report_masking_bit_2: String!
+        period_time_2: String!
+        io_masking_bit_2: String!
+        report_masking_bit_3: String!
+        period_time_3: String!
+        io_masking_bit_3: String!
+        report_masking_bit_4: String!
+        period_time_4: String!
+        io_masking_bit_4: String!
+
+        IOPort1_IO_status: String
+        IOPort1_out_status: String
+        IOPort2_IO_status: String
+        IOPort2_out_status: String
+        IOPort3_IO_status: String
+        IOPort3_out_status: String
+        IOPort4_IO_status: String
+        IOPort4_out_status: String
+
+       
+    
+    ): AddTxReportsIoPortSetResponse
+}

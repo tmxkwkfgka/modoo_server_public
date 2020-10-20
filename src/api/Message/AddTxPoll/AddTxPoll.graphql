@@ -1,0 +1,13 @@
+type AddTxPollResponse {
+    ok: Boolean!
+    error: String
+}
+
+
+type Mutation {
+    AddTxPoll(
+        imei: String!
+        reportNum: String!
+    ): AddTxPollResponse!
+}
+

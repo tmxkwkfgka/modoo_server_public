@@ -1,0 +1,17 @@
+
+type SingleFileUploadResponse {
+    ok: Boolean!
+    error: String
+    file: File
+}
+
+
+
+type Mutation {
+    SingleFileUpload(
+        file: Upload!
+        userId: Int
+        whichiId: Int
+        whichigroupId: Int
+    ): SingleFileUploadResponse!
+}

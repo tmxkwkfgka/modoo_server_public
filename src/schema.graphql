@@ -1,0 +1,509 @@
+type AddRxResponse {
+  ok: Boolean!
+  error: String
+}
+
+type Mutation {
+  AddRx(raw_content: String!): AddRxResponse!
+  AddRxMessage(raw_content: String!, message_body: String!): AddRxMessageResponse
+  AddRxReport(raw_content: String!, start: Int!): AddRxReportResponse!
+  AddTxDistress(imei: String!, on: String!): AddTxDistressResponse
+  AddTxIoPort(imei: String!, IOPort1_IO_status: String, IOPort1_out_status: String, IOPort2_IO_status: String, IOPort2_out_status: String, IOPort3_IO_status: String, IOPort3_out_status: String, IOPort4_IO_status: String, IOPort4_out_status: String): AddTxIoPortResponse
+  AddTxMessage(imei: String!, message_body: String!): AddTxMessageResponse
+  AddTxPoll(imei: String!, reportNum: String!): AddTxPollResponse!
+  AddTxReport(imei: String!): AddTxReportResponse
+  AddTxReportSet(imei: String!, report_masking_bit: String!, io_masking_bit: String!, period_time: String!): AddTxReportSetResponse
+  AddTxReportsIoPortSet(imei: String!, report_masking_bit_1: String!, period_time_1: String!, io_masking_bit_1: String!, report_masking_bit_2: String!, period_time_2: String!, io_masking_bit_2: String!, report_masking_bit_3: String!, period_time_3: String!, io_masking_bit_3: String!, report_masking_bit_4: String!, period_time_4: String!, io_masking_bit_4: String!, IOPort1_IO_status: String, IOPort1_out_status: String, IOPort2_IO_status: String, IOPort2_out_status: String, IOPort3_IO_status: String, IOPort3_out_status: String, IOPort4_IO_status: String, IOPort4_out_status: String): AddTxReportsIoPortSetResponse
+  AddPlace(raw: String, lat: Float!, lng: Float!, imei: String, speed: Float, course: Float, utc: String, poll: Boolean): AddPlaceResponse!
+  DeletePlace(placeId: Int!): DeletePlaceResponse!
+  EditPlace(placeId: Int!, name: String, isFav: Boolean): EditPlaceResponse!
+  ChangeMyPassword(userid: Int!, previousPassword: String!, newPassword: String!, confirmPassword: String!): ChangeMyPasswordResponse!
+  ChangePasswordByAdmin(userid: Int!, newPassword: String!, confirmPassword: String!): ChangePasswordByAdminResponse!
+  DeleteUser(userid: Int!): DeleteUserResponse!
+  SignIn(userid: String!, password: String!): SignInResponse!
+  SignUp(userid: String!, role: String!, firstName: String!, lastName: String!, email: String!, password: String!, phoneNumber: String!, uwpipeid: [Int], assetParentId: Int, customerParentId: Int, companyCode: String, registrant: String, fax: String, address: String, postalCode: String, nickname: String): SignUpResponse!
+  UpdateMyProfile(firstName: String, lastName: String, phoneNumber: String, email: String, profilePhoto: String, age: Int, companyCode: String, registrant: String, fax: String, address: String, postalCode: String, activate: Boolean, nickname: String): UpdateMyProfileResponse!
+  UpdateProfileByAdmin(userId: Int!, firstName: String, lastName: String, phoneNumber: String, email: String, profilePhoto: String, age: Int, companyCode: String, registrant: String, fax: String, address: String, postalCode: String, activate: Boolean, nickname: String): UpdateProfileByAdminResponse!
+  SingleFileUpload(file: Upload!, userId: Int, whichiId: Int, whichigroupId: Int): SingleFileUploadResponse!
+  AddWhichi(name: String!, imei: String!, pilot: String, type: String, usage: String, status: String, information: String, mission: String, activity: String, destination: String, profilepicture: String, icon: String, serialNumber: String, servicePlan: String): AddWhichiResponse!
+  AddWhichiGroup(name: String, icon: String, color: String, manager: String, pilots: String): AddWhichiGroupResponse!
+  AddWhichiToUser(id: Int!, imei: String!): AddWhichiToUserResponse!
+  DelWhichiGroup(whichiGroupId: Int!): DelWhichiGroupResponse!
+  DelWhichiToUser(userid: String!, imei: String!): DelWhichiToUserResponse!
+  EditWhichi(imei: String!, name: String, pilot: String, type: String, usage: String, status: String, information: String, mission: String, activity: String, icon: String, destination: String, onMap: Boolean, whichigroup: Int, serialNumber: String, servicePlan: String): EditWhichiResponse!
+  EditWhichiGroup(id: Int!, name: String, icon: String, color: String, manager: String, pilots: String): EditWhichiGroupResponse!
+  UpdateRecentestSetting(imei: String!, name: String, pilot: String, type: String, usage: String, status: String, information: String, mission: String, activity: String, icon: String, destination: String, onMap: Boolean, whichigroup: Int): UpdateRecentestSettingResponse!
+}
+
+type AddRxMessageResponse {
+  ok: Boolean!
+  error: String
+}
+
+type AddRxReportResponse {
+  ok: Boolean!
+  error: String
+}
+
+type AddTxDistressResponse {
+  ok: Boolean!
+  error: String
+}
+
+type AddTxIoPortResponse {
+  ok: Boolean!
+  error: String
+}
+
+type AddTxMessageResponse {
+  ok: Boolean!
+  error: String
+}
+
+type AddTxPollResponse {
+  ok: Boolean!
+  error: String
+}
+
+type AddTxReportResponse {
+  ok: Boolean!
+  error: String
+}
+
+type AddTxReportSetResponse {
+  ok: Boolean!
+  error: String
+}
+
+type AddTxReportsIoPortSetResponse {
+  ok: Boolean!
+  error: String
+}
+
+type GetMessagesResponse {
+  ok: Boolean!
+  error: String
+  messages: [Message]
+}
+
+type Query {
+  GetMessages(txrx: String, kind: [String], whichiIds: [Int], imeis: [String], place: Boolean, report_setting: Boolean, io_port_status: Boolean, from: Date, to: Date): GetMessagesResponse!
+  GetMessageUseBytes(whichiId: Int!): GetMessageUseBytesResponse!
+  GetDailyDistance(whichiId: Int!, from: Date, to: Date): GetDailyDistanceResponse!
+  GetManyPlaces(imeis: [String], from: String, to: String): GetManyPlacesResponse!
+  GetMyPlaces(whichiId: Int!, from: Date, to: Date): GetMyPlacesResponse!
+  CheckUserSameField(nickname: String, userid: String, imei: String): CheckUserSameFieldResponse!
+  GetChildUsers(userid: Int!): GetChildUsersResponse!
+  GetMyProfile: GetMyProfileResponse!
+  GetUsers(wholeTree: Boolean): GetUsersResponse!
+  GetMyWhichiGroups: GetMyWhichiGroupsResponse!
+  GetRecentestSetting(imei: String!): GetRecentestSettingResponse!
+  GetUsersWhichis: GetUsersWhichisResponse!
+  GetWhichis(imei: String): GetWhichisResponse!
+}
+
+type GetMessageUseBytesResponse {
+  ok: Boolean!
+  error: String
+  tx: Int
+  rx: Int
+}
+
+type IO_Port_Status {
+  id: Int!
+  port_num: Int
+  out_status: String
+  io_status: String
+  ADC: Int
+  createdAt: String
+  updatedAt: String
+}
+
+type Message {
+  id: Int!
+  raw_content: String
+  txrx: String
+  kind: String
+  message_body: String
+  reports: [Report_Setting]
+  ips: [IO_Port_Status]
+  place: Place
+  whichi: Whichi
+  whichi_having_last_message: Whichi
+  success: Boolean
+  payload_length: Int
+  createdAt: String!
+  updatedAt: String
+}
+
+type Report_Setting {
+  id: Int!
+  report_number: Int
+  utc_on: Boolean
+  gps_on: Boolean
+  alt_on: Boolean
+  speed_on: Boolean
+  course_on: Boolean
+  io1_on: Boolean
+  io2_on: Boolean
+  io3_on: Boolean
+  io4_on: Boolean
+  enable: Boolean
+  period_time: Int
+  createdAt: String
+  updatedAt: String
+}
+
+type AddPlaceResponse {
+  ok: Boolean!
+  error: String
+}
+
+type DeletePlaceResponse {
+  ok: Boolean!
+  error: String
+}
+
+type EditPlaceResponse {
+  ok: Boolean!
+  error: String
+}
+
+type DailyDistance {
+  km: Float!
+  feet: Float!
+  knot: Float!
+  speed: Float!
+  date: String!
+}
+
+type GetDailyDistanceResponse {
+  ok: Boolean!
+  error: String
+  resultArr: [DailyDistance]
+  kmsum: Float
+  feetsum: Float
+  knotsum: Float
+  speedavg: Float
+}
+
+type ManyPlaces {
+  imei: String!
+  places: [Place]
+}
+
+type GetManyPlacesResponse {
+  ok: Boolean!
+  error: String
+  manyplaces: [ManyPlaces]
+}
+
+type GetMyPlacesResponse {
+  ok: Boolean!
+  error: String
+  places: [Place]
+}
+
+scalar Date
+
+type Place {
+  id: Int!
+  name: String
+  lat: Float
+  lng: Float
+  utc: Date
+  alt: Float
+  speed: Float
+  course: Float
+  imei: String
+  kind: String
+  createdAt: String!
+  updatedAt: String
+}
+
+type ChangeMyPasswordResponse {
+  ok: Boolean!
+  error: String
+}
+
+type ChangePasswordByAdminResponse {
+  ok: Boolean!
+  error: String
+}
+
+type CheckUserSameFieldResponse {
+  ok: Boolean!
+  error: String
+  has: Boolean
+}
+
+type DeleteUserResponse {
+  ok: Boolean!
+  error: String
+}
+
+type GetChildUsersResponse {
+  ok: Boolean!
+  error: String
+  users: [User]
+}
+
+type GetMyProfileResponse {
+  ok: Boolean!
+  error: String
+  user: User
+}
+
+type GetUsersResponse {
+  ok: Boolean!
+  error: String
+  users: [User]
+}
+
+type User {
+  id: Int!
+  userid: String!
+  email: String
+  verifiedEmail: Boolean!
+  firstName: String!
+  lastName: String!
+  nickname: String
+  role: String!
+  age: Int
+  password: String
+  phoneNumber: String
+  profilePhoto: String
+  companyCode: String
+  registrant: String
+  fax: String
+  address: String
+  postalCode: String
+  activate: Boolean
+  uwpipe: [Whichi]
+  whichigroups: [WhichiGroup]
+  parentUser: User
+  usersAsUser: [User]
+  issuerUser: User
+  usersMade: [User]
+  createdAt: String!
+  updatedAt: String
+}
+
+type SignInResponse {
+  ok: Boolean!
+  error: String
+  token: String
+}
+
+type SignUpResponse {
+  ok: Boolean!
+  error: String
+  token: String
+  newUser: User
+}
+
+type UpdateMyProfileResponse {
+  ok: Boolean!
+  error: String
+}
+
+type UpdateProfileByAdminResponse {
+  ok: Boolean!
+  error: String
+}
+
+type File {
+  filename: String
+  path: String
+  mimetype: String
+  encoding: String
+}
+
+scalar Upload
+
+type SingleFileUploadResponse {
+  ok: Boolean!
+  error: String
+  file: File
+}
+
+type Verification {
+  id: Int!
+  target: String!
+  payload: String!
+  key: String!
+  verified: Boolean!
+  createdAt: String!
+  updatedAt: String
+}
+
+type AddWhichiResponse {
+  ok: Boolean!
+  error: String
+  newWhichi: Whichi
+}
+
+type AddWhichiGroupResponse {
+  ok: Boolean!
+  error: String
+  groupid: Int
+}
+
+type AddWhichiToUserResponse {
+  ok: Boolean!
+  error: String
+}
+
+type DelWhichiGroupResponse {
+  ok: Boolean!
+  error: String
+}
+
+type DelWhichiToUserResponse {
+  ok: Boolean!
+  error: String
+}
+
+type EditWhichiResponse {
+  ok: Boolean!
+  error: String
+}
+
+type EditWhichiGroupResponse {
+  ok: Boolean!
+  error: String
+}
+
+type GetMyWhichiGroupsResponse {
+  ok: Boolean!
+  error: String
+  whichigroups: [WhichiGroup]
+}
+
+type GetRecentestSettingResponse {
+  ok: Boolean!
+  error: String
+  recentestSetting: RecentestSetting
+}
+
+type GetUsersWhichisResponse {
+  ok: Boolean!
+  error: String
+  whichis: [Whichi]
+}
+
+type GetWhichisResponse {
+  ok: Boolean!
+  error: String
+  whichis: [Whichi]
+}
+
+type RecentestSetting {
+  report1_enable: Boolean
+  report1_utc_on: Boolean
+  report1_gps_on: Boolean
+  report1_alt_on: Boolean
+  report1_speed_on: Boolean
+  report1_course_on: Boolean
+  report1_period_time: Int
+  report1_io1_on: Boolean
+  report1_io2_on: Boolean
+  report1_io3_on: Boolean
+  report1_io4_on: Boolean
+  report2_enable: Boolean
+  report2_utc_on: Boolean
+  report2_gps_on: Boolean
+  report2_alt_on: Boolean
+  report2_speed_on: Boolean
+  report2_course_on: Boolean
+  report2_period_time: Int
+  report2_io1_on: Boolean
+  report2_io2_on: Boolean
+  report2_io3_on: Boolean
+  report2_io4_on: Boolean
+  report3_enable: Boolean
+  report3_utc_on: Boolean
+  report3_gps_on: Boolean
+  report3_alt_on: Boolean
+  report3_speed_on: Boolean
+  report3_course_on: Boolean
+  report3_period_time: Int
+  report3_io1_on: Boolean
+  report3_io2_on: Boolean
+  report3_io3_on: Boolean
+  report3_io4_on: Boolean
+  report4_enable: Boolean
+  report4_utc_on: Boolean
+  report4_gps_on: Boolean
+  report4_alt_on: Boolean
+  report4_speed_on: Boolean
+  report4_course_on: Boolean
+  report4_period_time: Int
+  report4_io1_on: Boolean
+  report4_io2_on: Boolean
+  report4_io3_on: Boolean
+  report4_io4_on: Boolean
+  port1_out_status: String
+  port1_io_status: String
+  port1_ADC: Int
+  port2_out_status: String
+  port2_io_status: String
+  port2_ADC: Int
+  port3_out_status: String
+  port3_io_status: String
+  port3_ADC: Int
+  port4_out_status: String
+  port4_io_status: String
+  port4_ADC: Int
+  imei: String
+  createdAt: String
+  updatedAt: String
+}
+
+type Whichi {
+  id: Int!
+  messages: [Message]
+  imei: String
+  name: String
+  pilot: String
+  type: String
+  usage: String
+  status: String
+  information: String
+  mission: String
+  activity: String
+  destination: String
+  profilepicture: String
+  icon: String
+  last_message: Message
+  last_position: Place
+  onMap: Boolean
+  users: [User]
+  whichigroup: WhichiGroup
+  serialNumber: String
+  servicePlan: String
+  tx_bytes: Int
+  rx_bytes: Int
+  createdAt: String
+  updatedAt: String
+  placeUpdatedAt: String
+}
+
+type WhichiGroup {
+  id: Int!
+  name: String
+  icon: String
+  color: String
+  manager: String
+  pilots: String
+  profilePhoto: String
+  whichi: [Whichi]
+  createdBy: User
+  createdAt: String
+  updatedAt: String
+}
+
+type UpdateRecentestSettingResponse {
+  ok: Boolean!
+  error: String
+}

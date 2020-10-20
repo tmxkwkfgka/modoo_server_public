@@ -1,0 +1,11 @@
+type GetWhichisResponse {
+    ok: Boolean!
+    error: String
+    whichis: [Whichi]
+
+}
+type Query {
+    GetWhichis(
+        imei: String
+    ): GetWhichisResponse!
+}

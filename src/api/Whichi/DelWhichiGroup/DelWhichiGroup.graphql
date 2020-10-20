@@ -1,0 +1,12 @@
+type DelWhichiGroupResponse {
+    ok: Boolean!
+    error: String
+}
+
+type Mutation {
+    DelWhichiGroup(
+       
+        whichiGroupId: Int!
+        
+    ): DelWhichiGroupResponse!
+}

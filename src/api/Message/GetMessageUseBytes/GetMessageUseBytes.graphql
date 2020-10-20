@@ -1,0 +1,15 @@
+
+
+type GetMessageUseBytesResponse {
+    ok: Boolean!
+    error: String
+    tx: Int
+    rx: Int
+}
+
+type Query {
+    GetMessageUseBytes(
+        whichiId: Int!
+        
+    ): GetMessageUseBytesResponse!
+}

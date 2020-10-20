@@ -1,0 +1,54 @@
+User
+[User]
+[Whichi] 
+
+
+
+Whichi
+- 위도 경도 속도 정보[Place]
+- 메시지[]
+- 단말기 serial 번호(imei?)
+
+
+Place
+- lat
+- lng
+- utc
+- altitude
+- course(각도)
+- speed
+- < [IO_Port_Status] 4개 
+
+Report_Setting
+- report_number
+- report_on
+- UTC_on
+- GPS_on
+- alt_on
+- speed_on
+- course_on
+- period_time
+
+IO_Port_Status
+- port_number
+- status 
+- IO_Status
+- ADC
+
+
+OnMap 테이블(user onetomany) 일단보류
+- on
+
+Message
+- raw content(16진수 string)
+- tx, rx
+- kinds(설정값 조회-setting_ask, 설정값변경-setting_change, 메시지전송-message_send, 위치요구-place_ask)
+- message_body(사용자 메시지 송수신일때)
+- < Place
+- < [Report]
+- < IO_Port_Status
+- created_at
+- updated_at
+
+
+

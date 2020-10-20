@@ -1,0 +1,23 @@
+
+
+type GetMessagesResponse {
+    ok: Boolean!
+    error: String
+    messages: [Message]
+}
+
+type Query {
+    GetMessages(
+        txrx: String
+        kind: [String]
+        whichiIds: [Int]
+        imeis: [String]
+        place: Boolean
+        report_setting: Boolean
+        io_port_status: Boolean
+        from: Date
+        to: Date
+
+
+    ): GetMessagesResponse!
+}

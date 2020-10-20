@@ -1,0 +1,11 @@
+type GetRecentestSettingResponse {
+    ok: Boolean!
+    error: String
+    recentestSetting: RecentestSetting
+
+}
+type Query {
+    GetRecentestSetting(
+        imei: String!
+    ): GetRecentestSettingResponse!
+}

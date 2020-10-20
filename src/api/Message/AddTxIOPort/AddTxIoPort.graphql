@@ -1,0 +1,21 @@
+type AddTxIoPortResponse {
+    ok: Boolean!
+    error: String
+}
+
+
+type Mutation {
+    AddTxIoPort(
+        
+        imei: String!
+        IOPort1_IO_status: String
+        IOPort1_out_status: String
+        IOPort2_IO_status: String
+        IOPort2_out_status: String
+        IOPort3_IO_status: String
+        IOPort3_out_status: String
+        IOPort4_IO_status: String
+        IOPort4_out_status: String
+
+    ): AddTxIoPortResponse
+}

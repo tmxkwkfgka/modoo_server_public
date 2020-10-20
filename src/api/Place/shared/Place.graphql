@@ -1,0 +1,17 @@
+scalar Date
+
+type Place {
+  id: Int!
+  name: String
+  lat: Float
+  lng: Float
+  utc: Date
+  alt: Float
+  speed: Float
+  course: Float
+  imei: String
+  kind: String
+ 
+  createdAt: String!
+  updatedAt: String
+}

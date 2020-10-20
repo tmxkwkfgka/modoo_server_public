@@ -1,0 +1,8 @@
+type File {
+    filename: String
+    path: String
+    mimetype: String
+    encoding: String
+}
+
+scalar Upload

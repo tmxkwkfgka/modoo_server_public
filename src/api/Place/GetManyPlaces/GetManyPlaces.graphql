@@ -1,0 +1,17 @@
+
+type ManyPlaces {
+  imei: String!,
+  places: [Place]
+
+}
+
+type GetManyPlacesResponse {
+  ok: Boolean!
+  error: String
+  manyplaces: [ManyPlaces]
+}
+
+
+type Query {
+  GetManyPlaces(imeis: [String] from: String to: String): GetManyPlacesResponse!
+}

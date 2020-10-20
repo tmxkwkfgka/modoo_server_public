@@ -1,0 +1,18 @@
+
+type Report_Setting {
+  id: Int!
+  report_number: Int
+  utc_on: Boolean
+  gps_on: Boolean
+  alt_on: Boolean
+  speed_on: Boolean
+  course_on: Boolean
+  io1_on: Boolean
+  io2_on: Boolean
+  io3_on: Boolean
+  io4_on: Boolean
+  enable: Boolean
+  period_time: Int
+  createdAt: String
+  updatedAt: String
+}

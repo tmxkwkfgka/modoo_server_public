@@ -1,0 +1,12 @@
+
+
+type GetMyPlacesResponse {
+  ok: Boolean!
+  error: String
+  places: [Place]
+}
+
+type Query {
+  GetMyPlaces(whichiId: Int! from: Date to: Date): GetMyPlacesResponse!
+}
+

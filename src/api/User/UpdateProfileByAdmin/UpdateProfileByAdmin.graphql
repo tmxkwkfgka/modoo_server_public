@@ -1,0 +1,26 @@
+type UpdateProfileByAdminResponse {
+  ok: Boolean!
+  error: String
+}
+
+type Mutation {
+  UpdateProfileByAdmin(
+    userId: Int!
+    firstName: String
+    lastName: String
+    phoneNumber: String
+    email: String
+   
+    profilePhoto: String
+    age: Int
+    
+    companyCode: String
+    registrant: String
+    fax: String
+    address: String
+    postalCode: String
+    activate: Boolean
+    nickname: String
+   
+  ): UpdateProfileByAdminResponse!
+}

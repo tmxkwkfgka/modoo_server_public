@@ -1,0 +1,19 @@
+
+
+type Message {
+  id: Int!
+  raw_content: String
+  txrx: String
+  kind: String
+  message_body: String
+  reports: [Report_Setting]
+  ips: [IO_Port_Status]
+  place: Place
+  whichi: Whichi
+  whichi_having_last_message: Whichi
+  success: Boolean
+  payload_length: Int
+ 
+  createdAt: String!
+  updatedAt: String
+}

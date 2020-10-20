@@ -1,0 +1,26 @@
+type EditWhichiResponse{
+    ok: Boolean!
+    error: String
+}
+
+
+type Mutation {
+    EditWhichi(
+        imei: String!
+        name: String
+        pilot: String
+        type: String
+        usage: String
+        status: String
+        information: String
+        mission: String
+        activity: String
+        icon: String
+        destination: String
+        onMap: Boolean
+        whichigroup: Int
+        serialNumber: String
+        servicePlan: String
+        
+    ): EditWhichiResponse!
+}

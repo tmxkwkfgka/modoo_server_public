@@ -1,0 +1,37 @@
+type Whichi {
+    id: Int!
+    messages: [Message]
+    imei: String
+    name: String
+    pilot: String
+    type: String
+    usage: String
+    status: String
+    information: String
+    mission: String
+    activity: String
+    destination: String
+    profilepicture: String
+    icon: String
+  
+    last_message: Message
+    last_position: Place
+    onMap: Boolean
+    users: [User]
+    whichigroup: WhichiGroup
+
+     
+    serialNumber: String
+    servicePlan: String
+
+    tx_bytes: Int
+    rx_bytes: Int
+
+    createdAt: String
+    updatedAt: String
+    placeUpdatedAt: String
+ 
+   
+    
+
+}

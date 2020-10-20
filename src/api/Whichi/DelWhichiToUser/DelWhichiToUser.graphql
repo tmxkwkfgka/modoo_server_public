@@ -1,0 +1,12 @@
+type DelWhichiToUserResponse {
+    ok: Boolean!
+    error: String
+}
+
+type Mutation {
+    DelWhichiToUser(
+        userid: String!
+        imei: String!
+        
+    ): DelWhichiToUserResponse!
+}

@@ -1,0 +1,72 @@
+type RecentestSetting {
+    
+    report1_enable: Boolean
+    report1_utc_on: Boolean
+    report1_gps_on: Boolean
+    report1_alt_on: Boolean
+    report1_speed_on: Boolean
+    report1_course_on: Boolean
+    report1_period_time: Int
+    report1_io1_on: Boolean
+    report1_io2_on: Boolean
+    report1_io3_on: Boolean
+    report1_io4_on: Boolean
+ 
+    report2_enable: Boolean
+    report2_utc_on: Boolean
+    report2_gps_on: Boolean
+    report2_alt_on: Boolean
+    report2_speed_on: Boolean
+    report2_course_on: Boolean
+    report2_period_time: Int
+    report2_io1_on: Boolean
+    report2_io2_on: Boolean
+    report2_io3_on: Boolean
+    report2_io4_on: Boolean
+
+    report3_enable: Boolean
+    report3_utc_on: Boolean
+    report3_gps_on: Boolean
+    report3_alt_on: Boolean
+    report3_speed_on: Boolean
+    report3_course_on: Boolean
+    report3_period_time: Int
+    report3_io1_on: Boolean
+    report3_io2_on: Boolean
+    report3_io3_on: Boolean
+    report3_io4_on: Boolean
+ 
+    report4_enable: Boolean
+    report4_utc_on: Boolean
+    report4_gps_on: Boolean
+    report4_alt_on: Boolean
+    report4_speed_on: Boolean
+    report4_course_on: Boolean
+    report4_period_time: Int
+    report4_io1_on: Boolean
+    report4_io2_on: Boolean
+    report4_io3_on: Boolean
+    report4_io4_on: Boolean
+
+    port1_out_status: String
+    port1_io_status: String
+    port1_ADC: Int
+
+    port2_out_status: String
+    port2_io_status: String
+    port2_ADC: Int
+
+    port3_out_status: String
+    port3_io_status: String
+    port3_ADC: Int
+
+    port4_out_status: String
+    port4_io_status: String
+    port4_ADC: Int
+
+    imei: String
+
+    createdAt: String
+    updatedAt: String
+
+}

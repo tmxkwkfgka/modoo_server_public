@@ -1,0 +1,10 @@
+type GetUsersResponse {
+    ok: Boolean!
+    error: String
+    users: [User]
+  }
+  
+  type Query {
+    GetUsers(wholeTree: Boolean): GetUsersResponse!
+  }
+  

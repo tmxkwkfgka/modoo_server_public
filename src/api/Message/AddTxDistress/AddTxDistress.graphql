@@ -1,0 +1,17 @@
+type AddTxDistressResponse {
+    ok: Boolean!
+    error: String
+}
+
+
+type Mutation {
+    AddTxDistress(
+        
+        imei: String!
+        on: String!
+       
+
+    ): AddTxDistressResponse
+}
+
+#on "00" "01"

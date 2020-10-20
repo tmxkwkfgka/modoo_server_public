@@ -1,0 +1,33 @@
+type User {
+  id: Int!
+  userid: String!
+  email: String
+  verifiedEmail: Boolean!
+  firstName: String!
+  lastName: String!
+  nickname: String
+  role: String!
+  age: Int
+  password: String
+  phoneNumber: String
+  profilePhoto: String
+
+  companyCode: String
+  registrant: String
+  fax: String
+  address: String
+  postalCode: String
+  activate: Boolean
+  
+  uwpipe: [Whichi]
+  whichigroups: [WhichiGroup]
+  
+  
+  parentUser: User
+  usersAsUser: [User]
+  issuerUser: User
+  usersMade: [User] 
+
+  createdAt: String!
+  updatedAt: String
+}

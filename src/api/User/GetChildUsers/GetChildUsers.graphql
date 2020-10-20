@@ -1,0 +1,10 @@
+type GetChildUsersResponse {
+    ok: Boolean!
+    error: String
+    users: [User]
+  }
+  
+  type Query {
+    GetChildUsers(userid: Int!): GetChildUsersResponse!
+  }
+  

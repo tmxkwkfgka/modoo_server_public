@@ -1,0 +1,10 @@
+
+type IO_Port_Status {
+  id: Int!
+  port_num: Int
+  out_status: String
+  io_status: String
+  ADC: Int
+  createdAt: String
+  updatedAt: String
+}

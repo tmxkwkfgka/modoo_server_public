@@ -1,0 +1,11 @@
+type AddTxMessageResponse {
+    ok: Boolean!
+    error: String
+}
+
+type Mutation {
+    AddTxMessage(
+        imei: String!
+        message_body: String!
+    ): AddTxMessageResponse
+}

@@ -1,0 +1,23 @@
+type DailyDistance{
+    km: Float!
+    feet: Float!
+    knot: Float!
+    speed: Float!
+    date: String!
+    
+}
+
+type GetDailyDistanceResponse {
+  ok: Boolean!
+  error: String
+  resultArr: [DailyDistance]
+  kmsum: Float
+  feetsum: Float
+  knotsum: Float
+  speedavg: Float
+}
+
+type Query {
+  GetDailyDistance(whichiId: Int!, from: Date, to: Date): GetDailyDistanceResponse!
+}
+

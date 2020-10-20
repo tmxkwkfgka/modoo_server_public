@@ -1,0 +1,17 @@
+type EditWhichiGroupResponse {
+    ok: Boolean!
+    error: String
+}
+
+type Mutation {
+    EditWhichiGroup(
+        id: Int!
+        name: String
+        icon: String
+        color: String
+        manager: String
+        pilots: String
+      
+        
+    ): EditWhichiGroupResponse!
+}

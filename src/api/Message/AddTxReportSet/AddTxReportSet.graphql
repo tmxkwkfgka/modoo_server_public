@@ -1,0 +1,16 @@
+type AddTxReportSetResponse {
+    ok: Boolean!
+    error: String
+}
+
+
+type Mutation {
+    AddTxReportSet(
+        
+        imei: String!
+        report_masking_bit: String!
+        io_masking_bit: String!
+        period_time: String!
+    
+    ): AddTxReportSetResponse
+}

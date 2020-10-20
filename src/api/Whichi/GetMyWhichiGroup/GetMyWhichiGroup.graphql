@@ -1,0 +1,9 @@
+type GetMyWhichiGroupsResponse {
+    ok: Boolean!
+    error: String
+    whichigroups: [WhichiGroup]
+
+}
+type Query {
+    GetMyWhichiGroups: GetMyWhichiGroupsResponse!
+}

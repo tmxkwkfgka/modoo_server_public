@@ -1,0 +1,25 @@
+type AddWhichiResponse {
+    ok: Boolean!
+    error: String
+    newWhichi: Whichi
+}
+
+type Mutation {
+    AddWhichi(
+        name: String!
+        imei: String!
+        pilot: String
+        type: String
+        usage: String
+        status: String
+        information: String
+        mission: String
+        activity: String
+        destination: String
+        profilepicture: String
+        icon: String
+        serialNumber: String
+        servicePlan: String
+        
+    ): AddWhichiResponse!
+}

@@ -1,0 +1,11 @@
+type AddRxReportResponse {
+    ok: Boolean!
+    error: String
+}
+
+type Mutation {
+    AddRxReport(
+        raw_content: String!
+        start: Int!
+    ): AddRxReportResponse!
+}

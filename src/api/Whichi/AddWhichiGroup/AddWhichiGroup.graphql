@@ -1,0 +1,19 @@
+type AddWhichiGroupResponse {
+    ok: Boolean!
+    error: String
+    groupid: Int
+}
+
+type Mutation {
+    AddWhichiGroup(
+        
+        name: String
+        icon: String
+        color: String
+        manager: String
+        pilots: String
+   
+        
+        
+    ): AddWhichiGroupResponse!
+}

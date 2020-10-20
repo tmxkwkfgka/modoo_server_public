@@ -1,0 +1,14 @@
+type AddTxReportResponse {
+    ok: Boolean!
+    error: String
+}
+
+
+type Mutation {
+    AddTxReport(
+        
+        imei: String!
+       
+
+    ): AddTxReportResponse
+}

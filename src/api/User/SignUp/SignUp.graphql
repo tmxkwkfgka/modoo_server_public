@@ -1,0 +1,27 @@
+type SignUpResponse {
+  ok: Boolean!
+  error: String
+  token: String
+  newUser: User
+}
+
+type Mutation {
+  SignUp(
+    userid: String!
+    role: String!
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+    phoneNumber: String!
+    uwpipeid: [Int]
+    assetParentId: Int
+    customerParentId: Int,
+    companyCode: String
+    registrant: String
+    fax: String
+    address: String
+    postalCode: String
+    nickname: String
+  ): SignUpResponse!
+}

@@ -1,0 +1,14 @@
+type CheckUserSameFieldResponse {
+    ok: Boolean!
+    error: String
+    has: Boolean
+  }
+  
+  type Query {
+    CheckUserSameField(
+        nickname: String
+        userid: String
+        imei: String
+    ): CheckUserSameFieldResponse!
+  }
+  

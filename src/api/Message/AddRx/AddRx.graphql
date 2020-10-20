@@ -1,0 +1,11 @@
+type AddRxResponse {
+    ok: Boolean!
+    error: String
+}
+
+type Mutation {
+    AddRx(
+        raw_content: String!
+        
+    ): AddRxResponse!
+}
